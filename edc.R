@@ -1,5 +1,12 @@
 
 Dis<- function(cord,polygon2){
+  
+  lens <- function(a,b){((a-b)^2 %>%sum())^0.5}
+  
+  linelen <- function(x){
+    cods <-  x@lines[[1]]@Lines[[1]]@coords
+    return( ((cods[2,]-cods[1,])^2 %>%sum())^0.5 )}
+  
   nr <- nrow(cord %>% data.frame)
   gr <- polygon2@data %>% nrow
   
