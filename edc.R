@@ -142,7 +142,7 @@ nbpoints <- function(polygon1,polygon2,gridsize){
   
   
     lss<- list(distable=bpoints,
-               weight=rep(1,nrow(bpoints)))
+               weight=rep(1,nr))
     #print(lss)
     return(lss)     
   }
