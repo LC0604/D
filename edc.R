@@ -27,14 +27,14 @@ nbpoints <- function(polygon1,polygon2,gridsize){
     proj4string(p1_out) <- "+proj=utm +zone=51 ellps=WGS84"
     
     # rasterize the p1_in and converse to points
-    gridn_in <- round(abs(p1_in@bbox[,1]-p1_in@bbox[,2])/5,0)
+    gridn_in <- round(abs(p1_in@bbox[,1]-p1_in@bbox[,2])/20,0)
     rasunit_in <- raster(ncol=gridn_in[1], nrow=gridn_in[2], crs = "+proj=utm +zone=51 ellps=WGS84")
     extent(rasunit_in) <- extent(p1_in)
     cord_in <- rasterize(p1_in, rasunit_in) %>% rasterToPoints() %>% SpatialPoints()
     crs(cord_in) = "+proj=utm +zone=51 ellps=WGS84"
     
     # rasterize the p1_out and converse to points
-    gridn_out <- round(abs(p1_out@bbox[,1]-p1_out@bbox[,2])/1,0)
+    gridn_out <- round(abs(p1_out@bbox[,1]-p1_out@bbox[,2])/20,0)
     rasunit_out <- raster(ncol=gridn_out[1], nrow=gridn_out[2], crs = "+proj=utm +zone=51 ellps=WGS84")
     extent(rasunit_out) <- extent(p1_out)
     cord_out <- rasterize(p1_out, rasunit_out) %>% rasterToPoints() %>% SpatialPoints()
