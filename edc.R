@@ -1,6 +1,6 @@
 
 
-nbpoints <- function(polygon1,polygon2,gridsize){
+#nbpoints <- function(polygon1,polygon2,gridsize){
   
 
   linelen <- function(x){
