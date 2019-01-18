@@ -3,12 +3,12 @@
 nbpoints <- function(polygon1,polygon2,gridsize){
   
 
- # linelen <- function(x){
- #   cods <-  x@lines[[1]]@Lines[[1]]@coords
- #   return( ((cods[2,]-cods[1,])^2 %>%sum())^0.5 )}
+  linelen <- function(x){
+    cods <-  x@lines[[1]]@Lines[[1]]@coords
+    return( ((cods[2,]-cods[1,])^2 %>%sum())^0.5 )}
   
- # lens <- function(a,b){((a-b)^2 %>%sum())^0.5}  
- # gridn <- round(abs(polygon1@bbox[,1]-polygon1@bbox[,2])/gridsize,0)
+  lens <- function(a,b){((a-b)^2 %>%sum())^0.5}  
+  gridn <- round(abs(polygon1@bbox[,1]-polygon1@bbox[,2])/gridsize,0)
  
   rasunit <- raster(ncol=gridn[1], nrow=gridn[2], crs = "+proj=utm +zone=51 ellps=WGS84")
   extent(rasunit) <- extent(polygon1)
