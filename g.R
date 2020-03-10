@@ -6,7 +6,7 @@ g<-function(disbord){
   asd = 2.1524
   
   cz = 0.7359
-  D = 100
+  D = 30
   
   tad=0
   for ( i in 1:(10-DT) ){
